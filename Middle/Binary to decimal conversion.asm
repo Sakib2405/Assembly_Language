@@ -1,0 +1,15 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    BIN DW 1010B
+.CODE
+MAIN PROC
+    MOV AX, BIN
+    MOV CX, 10
+    XOR DX, DX
+    DIV CX     ; Quotient = AX, Remainder = DX
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
